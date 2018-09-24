@@ -12,9 +12,9 @@ export class Router extends Component {
       <BrowserRouter>
         {/* Nos permite crear las rutas */}
         <Switch>
-          <Route exact path ="" component= {Inicio} />
-          <Route exact path ="/nosotros" component= {Nosotros} />
-          <Route component0 = { NotFound } />
+          <Route exact path="/" component={Inicio} />
+          <Route exact path="/nosotros" component={Nosotros} />
+          <Route component={ NotFound } />
         </Switch>
       </BrowserRouter>
     )
