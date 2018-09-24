@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import data from "../data/data.json";
 
-import { Inicio } from './Inicio/Inicio'
 import { Nosotros } from './Nosotros/Nosotros';
 import { NotFound } from './404/404';
 import { Productos } from './Productos/Productos';
@@ -24,6 +23,7 @@ export class Router extends Component {
     return (
       //   Routing ( barra de navagación ) 
       <BrowserRouter>
+      
         {/* Nos permite crear las rutas */}
         <Switch>
           <Route exact path="/" render={ () => (
