@@ -3,11 +3,12 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import data from "../data/data.json";
 
+import Header from './Header/Header';
 import { Nosotros } from './Nosotros/Nosotros';
 import { NotFound } from './404/404';
 import { Productos } from './Productos/Productos';
 
-import { SingleProducto } from "./SingleProducto/SingleProducto";
+import SingleProducto from "./SingleProducto/SingleProducto";
 
 export class Router extends Component {
 
@@ -25,21 +26,23 @@ export class Router extends Component {
     return (
       //   Routing ( barra de navagación ) 
       <BrowserRouter>
-      
-        {/* Nos permite crear las rutas */}
-        <Switch>
-          <Route exact path="/" render={ () => (
-            <Productos productos={this.state.productos}/>
-          )} />
-          <Route exact path="/nosotros" component={Nosotros} />
-          <Route exact path="/producto/:id" render={(props) => {
-            let idProducto = props.location.pathname.replace('/producto/', '');
-            return(
-              <SingleProducto producto={this.state.productos[idProducto]}/>
-            )
-          }} />
-          <Route component={ NotFound } />
-        </Switch>
+        <div className="contenedor">
+          <Header />
+          {/* Nos permite crear las rutas */}
+          <Switch>
+            <Route exact path="/" render={ () => (
+              <Productos productos={this.state.productos}/>
+            )} />
+            <Route exact path="/nosotros" component={Nosotros} />
+            <Route exact path="/producto/:id" render={(props) => {
+              let idProducto = props.location.pathname.replace('/producto/', '');
+              return(
+                <SingleProducto producto={this.state.productos[idProducto]} />
+              )
+            }} />
+            <Route component={ NotFound } />
+          </Switch>
+        </div>
       </BrowserRouter>
     )
   }

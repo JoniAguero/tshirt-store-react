@@ -1,15 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import "./SingleProducto.css";
+import './SingleProducto.css';
 
-export class SingleProducto extends Component {
-  render() {
+const SingleProducto = (props) => {
+
+    const {imagen, nombre, precio, descripcion} = props.producto;
+    if(!props) return null;
     return (
-      <div>
-        
+      <div className="info-producto">
+            <div className="imagen">
+                <img src={`/img/${imagen}.png`} alt={nombre} />
+            </div>
+
+            <div className="info">
+                <h2>{nombre}</h2>
+                <p className="precio">$ {precio}</p>
+                <p>{descripcion}</p>
+            </div>
       </div>
     )
-  }
+  
 }
 
 export default SingleProducto;
