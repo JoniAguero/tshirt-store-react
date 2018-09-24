@@ -10,6 +10,7 @@ import { NotFound } from './404/404';
 import { Productos } from './Productos/Productos';
 
 import SingleProducto from "./SingleProducto/SingleProducto";
+import { Contacto } from './Contacto/Contacto';
 
 export class Router extends Component {
 
@@ -39,7 +40,7 @@ export class Router extends Component {
               <Productos productos={this.state.productos} />
             )} />
             <Route exact path="/nosotros" component={Nosotros} />
-            <Route exact path="/contacto" component={Nosotros} />
+            <Route exact path="/contacto" component={Contacto} />
             <Route exact path="/producto/:id" render={(props) => {
               let idProducto = props.location.pathname.replace('/producto/', '');
               return(
