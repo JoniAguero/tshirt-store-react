@@ -6,6 +6,17 @@ import { Nosotros } from './Nosotros/Nosotros';
 import { NotFound } from './404/404';
 
 export class Router extends Component {
+
+  state = {
+    productos: []
+  }
+
+  componentWillMount() {
+    this.setState({
+      productos: this.props.data
+    })
+  }
+
   render() {
     return (
       //   Routing ( barra de navagación ) 
