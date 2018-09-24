@@ -9,7 +9,7 @@ export class Productos extends Component {
     return (
       <div className="productos">
         <h2>Nuestros Productos</h2>
-        <Buscador />
+        <Buscador busqueda={this.props.busquedaProducto}/>
         <ul className="lista-productos">
             {Object.keys(this.props.productos).map( producto => (
                     <Producto info={this.props.productos[producto]}
